@@ -1,9 +1,11 @@
-#I want to set this to always send the feedback to the administrator. share_interview_answers = True
-
+#I want to set this to always send the feedback to the administrator. 
+---
+code: |
+  share_interview_answers == True
 ---
 modules:
-  - .github_issue
-  - .feedback_on_server
+  - docassemble.GithubFeedbackForm.github_issue
+  - docassemble.GithubFeedbackForm.feedback_on_server
 ---
 include:
   - docassemble.ALToolbox:collapse_template.yml
