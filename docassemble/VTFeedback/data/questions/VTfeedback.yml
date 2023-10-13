@@ -78,7 +78,7 @@ code: orig_session_id = url_args.get('session_id')
 id: intro
 decoration: opinion
 question: |
-  ${ al_feedback_form_title } - Tell us how we're doing
+  ${ al_feedback_form_title } - Tell us how we are doing
 subquestion: |
   Use this form to tell us about problems with VTCourtForms -- but DO NOT include any personal information.
   
