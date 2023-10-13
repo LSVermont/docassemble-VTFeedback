@@ -1,8 +1,5 @@
 #I want to set this to always send the feedback to the administrator. 
 ---
-code: |
-  share_interview_answers == True
----
 modules:
   - docassemble.GithubFeedbackForm.github_issue
   - docassemble.GithubFeedbackForm.feedback_on_server
