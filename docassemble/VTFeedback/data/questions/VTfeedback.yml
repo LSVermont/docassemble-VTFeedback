@@ -1,5 +1,4 @@
-#I added a code block to always NOT SHARE/LINK the user's main interview answers with the administrator. 
-#I commented out the question about sharing answers with an administrator.
+#Removed text about feedback is on a public repo
 
 ---
 modules:
@@ -83,8 +82,6 @@ question: |
 subquestion: |
   Use this form to tell us about problems with VTCourtForms -- but DO NOT include any personal information.
   
-  The information you type here will be publicly available in a code repository. That means anyone may be able to see it.
-  
   ${ collapse_template(al_how_to_get_legal_help) }
 
   **Feedback about your experience with VTCourtForms**
@@ -162,8 +159,6 @@ subquestion: |
   stakeholders.
   
   Use this form to tell us about problems with VTCourtForms -- but DO NOT include any personal information.
-  
-  The information you type here will be publicly available in a code repository. That means anyone may be able to see it.
   
   ${ collapse_template(al_how_to_get_legal_help) }
   
