@@ -1,4 +1,4 @@
-#Removed text about feedback is on a public repo
+#Removed text about following issue on GitHub
 
 ---
 modules:
@@ -258,12 +258,9 @@ question: |
   Thank you for your feedback
 decoration: opinion
 subquestion: |
-  Thanks for letting us know how we are doing.
+  Thanks for letting us know how we are doing!
   
-  % if issue_url:
-  If you would like to track this issue, you can [follow 
-  it](${issue_url}) on GitHub.
-  % endif
+
 buttons:
   - Exit: exit
 ---
