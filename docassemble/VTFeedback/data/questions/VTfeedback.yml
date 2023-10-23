@@ -1,4 +1,6 @@
-#I want to set this to always send the feedback to the administrator. 
+#I added a code block to always NOT SHARE/LINK the user's main interview answers with the administrator. 
+#I commented out the question about sharing answers with an administrator.
+
 ---
 modules:
   - docassemble.GithubFeedbackForm.github_issue
@@ -17,6 +19,8 @@ features:
   question back button: True
 ---
 code: al_feedback_form_title = "VTCourtForms Feedback"
+---
+code: share_interview_answers = False
 ---
 code: |
   # This email will be used ONLY if there is no valid GitHub config
@@ -111,16 +115,16 @@ fields:
   #      server_share_answers and not get_config('debug')
   #    variable: reason
   #    is: something
-  - label: |
-      Share my answers with an administrator
-    label above field: False
-    field: share_interview_answers
-    datatype: yesno
-    show if:
-      code: |
-        server_share_answers and not get_config('debug')
-      variable: reason
-      is: something
+  #- label: |
+  #    Share my answers with an administrator
+  #  label above field: False
+  #  field: share_interview_answers
+  #  datatype: yesno
+  #  show if:
+  #    code: |
+  #      server_share_answers and not get_config('debug')
+  #    variable: reason
+  #    is: something
   - label: |
       I am interested in being a part of a user feedback panel
     label above field: False
