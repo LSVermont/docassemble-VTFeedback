@@ -100,28 +100,6 @@ fields:
       is: something
   - note: |
       Remember: Do NOT include personal information. We cannot help you fill out this form or give you legal advice. This form is only for collecting feedback about using VTCourtForms.
-      
-  #- note: |
-  #    If you ran into a bug, you can share your answers with
-  #    an administrator (they will not be made public) to help us
-  #    track down the problem.
-  #    [BR]
-  #    We will not contact you either way.
-  #  show if:
-  #    code: |
-  #      server_share_answers and not get_config('debug')
-  #    variable: reason
-  #    is: something
-  #- label: |
-  #    Share my answers with an administrator
-  #  label above field: False
-  #  field: share_interview_answers
-  #  datatype: yesno
-  #  show if:
-  #    code: |
-  #      server_share_answers and not get_config('debug')
-  #    variable: reason
-  #    is: something
   - label: |
       I am interested in being a part of a user feedback panel
     label above field: False
@@ -147,6 +125,30 @@ fields:
       variable: would_be_on_panel
       is: True
 continue button field: intro
+---
+### commented out code in middle of question broke it, moved here
+
+  #- note: |
+  #    If you ran into a bug, you can share your answers with
+  #    an administrator (they will not be made public) to help us
+  #    track down the problem.
+  #    [BR]
+  #    We will not contact you either way.
+  #  show if:
+  #    code: |
+  #      server_share_answers and not get_config('debug')
+  #    variable: reason
+  #    is: something
+  #- label: |
+  #    Share my answers with an administrator
+  #  label above field: False
+  #  field: share_interview_answers
+  #  datatype: yesno
+  #  show if:
+  #    code: |
+  #      server_share_answers and not get_config('debug')
+  #    variable: reason
+  #    is: something
 ---
 if: |
   get_config('debug')
