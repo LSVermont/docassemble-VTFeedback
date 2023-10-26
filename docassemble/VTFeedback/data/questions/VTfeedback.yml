@@ -1,4 +1,4 @@
-#Removed text about following issue on GitHub
+#Added text about user will not get a reply
 
 ---
 modules:
@@ -99,7 +99,9 @@ fields:
       variable: reason
       is: something
   - note: |
-      Remember: Do NOT include personal information. We cannot help you fill out this form or give you legal advice. This form is only for collecting feedback about using VTCourtForms.
+      Remember: Do NOT include personal information. We cannot help you fill out this form or give you legal advice. We cannot reply to you about your feedback. This form is only for collecting feedback about using VTCourtForms.
+      
+      Thank you for helping us make this tool better!
   - label: |
       I am interested in being a part of a user feedback panel
     label above field: False
