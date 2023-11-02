@@ -52,7 +52,7 @@ image sets:
 ---
 # This is the repository that Github issue will be created on if
 # the repository is not passed as a URL argument
-code: default_repository = 'docassemble-AssemblyLine'
+code: default_repository = 'VTCourtFormsIssues'
 ---
 code: |
   default_github_user_or_organization = get_config('github issues',{}).get('default repository owner') or 'suffolklitlab'
@@ -102,32 +102,32 @@ fields:
       Remember: Do NOT include personal information. We cannot help you fill out this form or give you legal advice. We cannot reply to you about your feedback. This form is only for collecting feedback about using VTCourtForms.
       
       Thank you for helping us make this tool better!
-  - label: |
-      I am interested in being a part of a user feedback panel
-    label above field: False
-    field: would_be_on_panel
-    datatype: yesno
-    default: False
-    show if:
-      code: |
-        server_ask_panel and not get_config('debug')
-      variable: reason
-      is: something
-  - note: |
-      If we do a user feedback panel, we will contact you by email.
-    show if:
-      variable: would_be_on_panel
-      is: True
-  - label: |
-      **What is your email address?**
-    field: panel_email
-    datatype: email
-    default: ${ user_info().email if hasattr(user_info(), 'email') else '' }
-    show if:
-      variable: would_be_on_panel
-      is: True
 continue button field: intro
 ---
+#  - label: |
+#      I am interested in being a part of a user feedback panel
+#    label above field: False
+#    field: would_be_on_panel
+#    datatype: yesno
+#    default: False
+#    show if:
+#      code: |
+#        server_ask_panel and not get_config('debug')
+#      variable: reason
+#      is: something
+#  - note: |
+#      If we do a user feedback panel, we will contact you by email.
+#    show if:
+#      variable: would_be_on_panel
+#      is: True
+#  - label: |
+#      **What is your email address?**
+#    field: panel_email
+#    datatype: email
+#    default: ${ user_info().email if hasattr(user_info(), 'email') else '' }
+#    show if:
+#      variable: would_be_on_panel
+#      is: True
 ### commented out code in middle of question broke it, moved here
 
   #- note: |
@@ -152,77 +152,77 @@ continue button field: intro
   #    variable: reason
   #    is: something
 ---
-if: |
-  get_config('debug')
-id: intro
-question: |
-  Tester feedback form
-decoration: opinion
-subquestion: |
-  This form is designed to be used by testers and community
-  stakeholders.
-  
-  Use this form to tell us about problems with VTCourtForms -- but DO NOT include any personal information.
-  
-  ${ collapse_template(al_how_to_get_legal_help) }
-  
-fields:
-  - "**What would you like to tell us about?**": reason
-    input type: radio
-    choices:
-      - Bug: bug
-      - Language fix: language
-      - I have something else to tell you: something
-  - "**What was the title at the top of the page where the bug happened?**": page_title
-    show if:
-      code: |
-        not question_id
-  - "**When should this fix be implemented?**": maturity_level
-    code: maturity_levels
-    help: |
-      We use a [5-level
-      rating](https://suffolklitlab.org/legal-tech-class/docs/legal-tech-overview/maturity-model/#example-maturity-model-for-the-massaccess-project)
-      for our finished forms. Forms are usually
-      ready to publish when they meet level 1, but all kinds of
-      feedback are valuable. Categorizing feedback
-      helps us choose the right tasks to work on in the right order.
-  - "**What is the language fix?**": details
-    datatype: area
-    rows: 4
-    show if:
-      variable: reason
-      is: language
-  - note: |
-      **Tell us the steps that you followed before the bug, what you expected to happen, and what actually happened.** [BR]
-
-      For example:
-
-      1. On the first page, I typed my first name.
-      2. I pressed "continue" to go to the next page.
-      3. I expected to be able to enter my phone number, but it showed an error screen instead that said "..."
-    show if:
-      variable: reason
-      is: bug
-  - "**What is the bug?**": details
-    datatype: area
-    rows: 4
-    show if:
-      variable: reason
-      is: bug
-  - "**What would you like to tell us?**": details
-    datatype: area
-    rows: 4
-    show if:
-      variable: reason
-      is: something
-  - note: |
-      Your answers will be shared with an administrator.
-    show if:
-      code: |
-        server_share_answers
-      variable: reason
-      is: bug
-continue button field: intro
+#if: |
+#  get_config('debug')
+#id: intro
+#question: |
+#  Tester feedback form
+#decoration: opinion
+#subquestion: |
+#  This form is designed to be used by testers and community
+#  stakeholders.
+#  
+#  Use this form to tell us about problems with VTCourtForms -- but DO NOT include any personal information.
+#  
+#  ${ collapse_template(al_how_to_get_legal_help) }
+#  
+#fields:
+#  - "**What would you like to tell us about?**": reason
+#    input type: radio
+#    choices:
+#      - Bug: bug
+#      - Language fix: language
+#      - I have something else to tell you: something
+#  - "**What was the title at the top of the page where the bug happened?**": page_title
+#    show if:
+#      code: |
+#        not question_id
+#  - "**When should this fix be implemented?**": maturity_level
+#    code: maturity_levels
+#    help: |
+#      We use a [5-level
+#      rating](https://suffolklitlab.org/legal-tech-class/docs/legal-tech-overview/maturity-model/#example-maturity-model-for-the-massaccess-project)
+#      for our finished forms. Forms are usually
+#      ready to publish when they meet level 1, but all kinds of
+#      feedback are valuable. Categorizing feedback
+#      helps us choose the right tasks to work on in the right order.
+#  - "**What is the language fix?**": details
+#    datatype: area
+#    rows: 4
+#    show if:
+#      variable: reason
+#      is: language
+#  - note: |
+#      **Tell us the steps that you followed before the bug, what you expected to happen, and what actually happened.** [BR]
+#
+#      For example:
+#
+#      1. On the first page, I typed my first name.
+#      2. I pressed "continue" to go to the next page.
+#      3. I expected to be able to enter my phone number, but it showed an error screen instead that said "..."
+#    show if:
+#      variable: reason
+#      is: bug
+#  - "**What is the bug?**": details
+#    datatype: area
+#    rows: 4
+#    show if:
+#      variable: reason
+#      is: bug
+#  - "**What would you like to tell us?**": details
+#    datatype: area
+#    rows: 4
+#    show if:
+#      variable: reason
+#      is: something
+#  - note: |
+#      Your answers will be shared with an administrator.
+#    show if:
+#      code: |
+#        server_share_answers
+#      variable: reason
+#      is: bug
+#continue button field: intro
 ---
 variable name: maturity_levels
 data:
