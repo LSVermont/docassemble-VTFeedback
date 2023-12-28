@@ -253,8 +253,9 @@ subquestion: |
   
   ${ al_how_to_get_legal_help }
 
-buttons:
-  - Exit: exit
+  Your interview may still be open in another tab. If so, you can close this tab when you are done.
+#buttons:
+  #- Exit: exit
 ---
 id: end_results
 event: end_results
@@ -264,9 +265,9 @@ decoration: opinion
 subquestion: |
   Thanks for letting us know how we are doing!
   
-
-buttons:
-  - Exit: exit
+  Your interview may still be open in another tab. If so, you can close this tab when you are done.
+#buttons:
+  #- Exit: exit
 ---
 objects:
   - generic_report: DADict
