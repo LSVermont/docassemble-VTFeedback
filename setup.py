@@ -1,6 +1,6 @@
 import os
 import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 from fnmatch import fnmatchcase
 from distutils.util import convert_path
 
@@ -52,8 +52,7 @@ setup(name='docassemble.VTFeedback',
       author_email='ksurette@lawlinevt.org',
       license='The MIT License (MIT)',
       url='https://docassemble.org',
-      packages=find_packages(),
-      namespace_packages=['docassemble'],
+      packages=find_namespace_packages(),
       install_requires=['docassemble.ALToolbox>=0.9.2', 'docassemble.AssemblyLine>=2.27.0', 'docassemble.GithubFeedbackForm>=0.2.1'],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/VTFeedback/', package='docassemble.VTFeedback'),
